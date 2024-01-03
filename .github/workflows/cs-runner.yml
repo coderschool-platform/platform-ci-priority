@@ -67,7 +67,7 @@ jobs:
           echo "fb28a1c3715e0a6c5051af0e6eeff9c255009e2eec6fb08bc2708277fbb49f93  actions-runner-linux-x64-2.310.2.tar.gz" | shasum -a 256 -c
           tar xzf ./actions-runner-linux-x64-2.310.2.tar.gz
 
-          ./config.sh --url https://github.com/coderschool-platform --token ${{ needs.setup-token.outputs.token }} --name CS_RUNNER_${{ matrix.job }} --replace --labels "self-hosted,dustin-runner"
+          ./config.sh --url https://github.com/coderschool-platform --token ${{ needs.setup-token.outputs.token }} --name CS_RUNNER_${{ matrix.job }} --replace --labels "self-hosted,dustin-runner,high-priority" -runnergroup "high-priority"
 
       - name: Start runner
         continue-on-error: true
